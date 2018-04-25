@@ -142,20 +142,12 @@ $(document).ready(function() {
     
     
     $(".social").hover(function(){
-        var id = "#" + $(this).attr("id") + "-display";
-        var select = $(id);
-        $(select.children()[0]).css("left", "8px");
-        $(select.children()[0]).css("width", "63%");
-        $(select).css("transform", "translateY(-4px)");
-        $(select).css("box-shadow", "0px 6px 8px #D3D3D3");
+        $(this.children[0]).css("left", "8px");
+        $(this.children[0]).css("width", "63%");
     }, function(){
-        var id = "#" + $(this).attr("id") + "-display";
-        var select = $(id);
-        $(select.children()[0]).css("left", "initial");
-        $(select.children()[0]).css("right", "8px");
-        $(select.children()[0]).css("width", "0%");
-        $(select).css("transform", "translateY(0)");
-        $(select).css("box-shadow", "0px 2px 8px #D3D3D3");
+        $(this.children[0]).css("left", "initial");
+        $(this.children[0]).css("right", "8px");
+        $(this.children[0]).css("width", "0%");
     });
     
     
