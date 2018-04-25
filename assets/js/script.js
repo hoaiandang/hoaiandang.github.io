@@ -144,12 +144,10 @@ $(document).ready(function() {
     $(".social").hover(function(){
         $(this.children[0]).css("left", "8px");
         $(this.children[0]).css("width", "63%");
-        console.log("this should work!!");
     }, function(){
         $(this.children[0]).css("left", "initial");
         $(this.children[0]).css("right", "8px");
         $(this.children[0]).css("width", "0%");
-        console.log("this should work!!");
     });
     
     
