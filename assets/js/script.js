@@ -41,8 +41,8 @@ $(document).ready(function() {
         //$("#nav-bar").hide();
         $("#nav-bar").animate({
             opacity: 0.9999999
-        }, 800, "linear", function() {
-                        $(this).hide();
+        }, 600, "linear", function() {
+            $(this).hide();
         })
         //$("#nav-container-extra").addClass("nav-closed-extra").removeClass("nav-opened-extra");
     }
@@ -54,7 +54,63 @@ $(document).ready(function() {
         //$("#nav-container-extra").addClass("nav-opened-extra").removeClass("nav-closed-extra");
     }
     
+    function playMessages() {
+        console.log("1");
+        setTimeout(playMessage1, 1000)
+    }
     
+    function playMessage1() {
+        console.log("2");
+        $("#message-1").css("opacity", ".8");
+        setTimeout(fadeMessage1, 3200);
+    }
+    
+    function fadeMessage1() {
+        console.log("3");
+        $("#message-1").css("opacity", "0");
+        setTimeout(playMessage2, 1600);
+    }
+    
+    function playMessage2() {
+        console.log("4");
+        $("#message-2").css("opacity", "0.8");
+        setTimeout(fadeMessage2, 4800);
+    }
+    
+    function fadeMessage2() {
+        console.log("5");
+        $("#message-2").css("opacity", "0");
+        setTimeout(playMessage3, 1600);
+    }
+    
+    function playMessage3() {
+        console.log("6");
+        $("#message-3").css("opacity", "0.8");
+        setTimeout(fadeMessage3, 4800);
+    }
+    
+    function fadeMessage3() {
+        console.log("7");
+        $("#message-3").css("opacity", "0");
+        setTimeout(playMessage4, 1600);
+    }
+    
+    function playMessage4() {
+        console.log("8");
+        $("#message-4").css("opacity", "0.8");
+        setTimeout(fadeMessage4, 4200);
+    }
+    
+    function fadeMessage4() {
+        console.log("9");
+        $("#message-4").css("opacity", "0");
+    }
+
+    
+    
+    
+    console.log($(".message").attr("message") + $(".message").attr("message"));
+    console.log($(".message").html());
     $("#nav-bar").hide();
     $("#top").hide();
     setTimeout(circleShow, 800);
@@ -70,7 +126,6 @@ $(document).ready(function() {
     })
     
     $(".selected").click(function() {
-        console.log($(this).attr("id"));
         if ($("#burger").hasClass("burger-active")) {
             closeNav();
         }
@@ -104,6 +159,11 @@ $(document).ready(function() {
         } else {
             $("#black-page").removeClass("opened").addClass("closed");
             $("#particles-js").css("opacity", "0");
+        }
+        if ($(this).attr("message") == "true") {
+            playMessages();
+            $(this).attr("message", "false");
+            console.log("if statement");
         }
     })
     
