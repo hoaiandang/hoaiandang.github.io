@@ -465,6 +465,8 @@ body {
 }
 
 .bar-back {
+    overflow: hidden;
+    transform: translateY(20px);
     background: linear-gradient(to left, #FFD800, #EB00FF);
     position: absolute;
     width: 26px;
@@ -481,15 +483,18 @@ body {
 }
 
 .burger-inactive #bar-back1 {
-    top: 11px;
+    transform: translateY(11px);
+    /*top: 11px;*/
 }
 
 .burger-inactive #bar-back2 {
-    top: 20px;
+    /*top: 20px;*/
+    transform: translateY(20px);
 }
 
 .burger-inactive #bar-back3 {
-    top: 29px;
+    transform: translateY(29px);
+    /*top: 29px;*/
 }
 
 
@@ -498,12 +503,11 @@ body {
 }
 
 .burger-inactive:hover .bar {
-    width: 0px;
+    transform: translateX(26px);
 }
 
 .burger-inactive:active .bar {
     transition-duration: 0s;
-    width: 26px;
     background-color: #707070;
 }
 
@@ -519,13 +523,11 @@ body {
 }
 
 .burger-active > #bars:hover + .button-background {
-    
     opacity: 0;
     
 }
 
 .burger-active > #bars + .button-background {
-    
     transition-duration: 0.1s;
     transition-timing-function: ease;
     
@@ -543,14 +545,14 @@ body {
 
 
 .burger-active #bar-back1 {
-    transform: rotate(-45deg);
-    top: 20px;
+    transform: translateY(20px) rotate(-45deg);
+    /*top: 20px;*/
 }
 
 .burger-active #bar-back2 {
     height: 0px;
     width: 0px;
-    top: 23px;
+    /*top: 23px;*/
     right: 13px;
     opacity: 0.7;
     
@@ -558,8 +560,8 @@ body {
 
 
 .burger-active #bar-back3 {
-    transform: rotate(45deg);
-    top: 20px;
+    transform: translateY(20px) rotate(45deg);
+    /*top: 20px;*/
 }
 
 
