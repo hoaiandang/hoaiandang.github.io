@@ -55,7 +55,7 @@ body {
     left: 0;
     right: 0;
     position: relative;
-    font-size: 36px;
+    font-size: 32px;
     word-wrap: break-word;
     margin-bottom: 100px;
 }
@@ -149,14 +149,15 @@ body {
     width: calc(100% + .49px);
     position: absolute;
     top: 7px;
-    left: 10px;
+    left: 8px;
     height: 28px;
     background: linear-gradient(to bottom, #FFD800, #EB00FF);
     background-color: white;
     transition-duration: 0.3s;
-    transition-timing-function: ease;
-    width: 0px;
+    transition-timing-function: ease-out;
+    width: 63%;
     z-index: 1;
+    opacity: 0;
 }
 
 .social-back {
@@ -261,14 +262,15 @@ body {
     box-shadow: 0px 24px 24px #D3D3D3;
     top: -24px;
     bottom: 24px;
+    cursor: pointer;
 }
 
 .card:active {
     transition-duration: 0.05s;
     transition-timing-function: ease-out;
     box-shadow: 0px 1px 4px #D3D3D3;
-    top: 0px;
-    bottom: 0px;
+    top: -16px;
+    bottom: 16px;
 }
 
 .card:active .card-image {
@@ -277,39 +279,34 @@ body {
 
 .card-image {
     z-index: 2;
-    position: absolute;
+    position: relative;
     background-color: #707070;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 200px;
+    width: 100%;
+    height: 200px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-size: cover;
 }
 
+.card-text {
+    padding: 16px;
+    font-size: 32px;
+}
+
 #card-image1 {
-    background-image: url(../img/homes.jpg);
+    background-image: url(../img/project-1.jpg);
 }
 
 #card-image2 {
-    background-image: url(../img/homes.jpg);
+    background-image: url(../img/project-2.jpg);
 }
 
 #card-image3 {
-    background-image: url(../img/homes.jpg);
+    background-image: url(../img/project-3.jpg);
 }
 
 #card-image4 {
-    background-image: url(../img/homes.jpg);
-}
-
-#card-image5 {
-    background-image: url(../img/homes.jpg);
-}
-
-#card-image6 {
-    background-image: url(../img/homes.jpg);
+    background-image: url(../img/project-4.jpg);
 }
 
 #burger {
@@ -393,39 +390,41 @@ body {
 
 @keyframes unpress {
     0% {
-        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2) inset;
+        filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, 0.2) inset );
     }
     50% {
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1) inset;
+        filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, 0.1) inset );
     }
     50% {
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) inset;
+        filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, 0) inset );
     }
     51% {
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, 0) );
     }
     51% {
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+        filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, 0.1) );
     }
     
     100% {
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, 0.1) );
     }
 }
 
+
 .burger-inactive + #nav-container {
-    animation: unpress 1.2s;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+
+    /*animation: unpress 1.2s;*/
+
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .burger-inactive:active + #nav-container {
-    transition-duration: 1s;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
 }
 
 .burger-active + #nav-container {
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2) inset;
 }
+
+
 
 @keyframes colorize {
     100% {background: linear-gradient(#FFD800, #EB00FF);}
@@ -440,6 +439,7 @@ body {
     width: 100%;
     transition-timing-function: ease-out;
     transition-duration: 0.25s;
+    will-change: transform, opacity;
 }
 
 
@@ -459,6 +459,7 @@ body {
     */
     transition-duration: 0.3s;
     transition-timing-function: ease-in;
+    will-change: transform opacity;
 }
 .burger-inactive .bar {
     width: 90%;
@@ -480,16 +481,17 @@ body {
     transition-timing-function: ease;
 }
 
+
 .burger-inactive #bar-back1 {
-    top: 11px;
+    transform: translateY(12px);
 }
 
 .burger-inactive #bar-back2 {
-    top: 20px;
+    transform: translateY(20px);
 }
 
 .burger-inactive #bar-back3 {
-    top: 29px;
+    transform: translateY(28px);
 }
 
 
@@ -543,23 +545,18 @@ body {
 
 
 .burger-active #bar-back1 {
-    transform: rotate(-45deg);
-    top: 20px;
+    transform: translateY(20px) rotate(-45deg);
 }
 
 .burger-active #bar-back2 {
-    height: 0px;
-    width: 0px;
-    top: 23px;
-    right: 13px;
+    transform: translateY(20px) translateX(10px) scale(0.1);
     opacity: 0.7;
     
 }
 
 
 .burger-active #bar-back3 {
-    transform: rotate(45deg);
-    top: 20px;
+    transform: translateY(20px) rotate(45deg);
 }
 
 
@@ -617,29 +614,99 @@ body {
     z-index: 8;
     background-color: white;
     transition-duration: 0.8s;
-    transition-timing-function: ease-in;
+    transition-timing-function: ease-out;
     overflow: hidden;
+    transform: translate3d(0);
+    will-change: transform opacity;
     /*
     box-shadow: 1px 1px 4px #D3D3D3 inset;
     */
+    /*
+    top: -5vh;
+    right: 0px;
+    width: 100vw;
+    height: 105vh;
+    */
     
+    border-radius: 1400px;
 }
 
+/*
+.nav-closed::after {
+    
+    content: "";
+    border-radius: 1400px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    
+}
+*/
+
 .nav-opened {
+    
     top: -1300px;
     right: -1300px;
-    width: 2800px;
-    height: 2800px;
-    border-radius: 1400px;
+    width: 2750px;
+    height: 2750px;
+    
+    
+    /*clip-path: circle(160vh at 95vw 15vh);*/
 }
 
 .nav-closed {
-    top: 32px;
-    right: 32px;
-    width: 44px;
-    height: 44px;
-    border-radius: 1400px;
+    
+    top: 30px;
+    right: 30px;
+    width: 49px;
+    height: 49px;
+    
+    /*clip-path: circle(60px at 95vw 15vh);*/
 }
+
+#nav-background {
+    position: fixed;
+    z-index: 7;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out;
+    overflow: hidden;
+    top: 0px;
+    right: 0px;
+    height: 100vh;
+    width: 100vw;
+    transform: scale(1);
+    filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, 0.1) );
+}
+
+.nav-opened + #nav-background {
+}
+
+.nav-closed + #nav-background {
+    pointer-events: none;
+}
+
+circle {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#nav-background > circle {
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out;
+}
+
+
+.nav-opened + #nav-background > circle {
+    r: 100vw;
+}
+
+.nav-closed + #nav-background > circle {
+}
+
 
 .nav-closed > #nav-bar {
 }

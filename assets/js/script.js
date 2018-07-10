@@ -1,12 +1,5 @@
 $(document).ready(function() {
     
-    function circleOut() {
-        // jQuery Function Number 1
-        // jQuery Function Number 2
-        $("#container").removeClass("closed").addClass("opened");
-        setTimeout(introClean, 900)
-    }
-    
     function circleShow() {
         // jQuery Function Number 3
         $("#top").fadeIn(50);
@@ -14,6 +7,12 @@ $(document).ready(function() {
         setTimeout(circleOut, 50);
     }
     
+    function circleOut() {
+        // jQuery Function Number 1
+        // jQuery Function Number 2
+        $("#container").removeClass("closed").addClass("opened");
+        setTimeout(introClean, 900)
+    }    
     
     function introClean() {
         // jQuery Function Number 4
@@ -24,7 +23,10 @@ $(document).ready(function() {
         $("#top").removeClass("container-container");
         $("#container").removeClass("opened").addClass("full");
         $("#container").css("overflow", "initial");
+        
+        setTimeout(openNav, 0);
     }
+    
     function switchZIndex() {
         if ($("#black-page").css("z-index") == 0) {
             $("#black-page").css("z-index", 1);
@@ -35,15 +37,33 @@ $(document).ready(function() {
         }
     }
     
+    var myVar;
+    
+    
+    
+    function hideNavBar() {
+        $("#nav-bar").hide();
+    }
+    
+    function myStopFunction() {
+        clearTimeout(myVar);
+    }
+    
     function closeNav() {
         $("#burger").addClass("burger-inactive").removeClass("burger-active");
         $("#nav-container").addClass("nav-closed").removeClass("nav-opened");
         //$("#nav-bar").hide();
+        
+        /*
         $("#nav-bar").animate({
             opacity: 0.9999999
         }, 600, "linear", function() {
             $(this).hide();
         })
+        */
+        
+        myVar = setTimeout(hideNavBar, 600);
+        
         //$("#nav-container-extra").addClass("nav-closed-extra").removeClass("nav-opened-extra");
     }
     
@@ -52,6 +72,7 @@ $(document).ready(function() {
         $("#burger").addClass("burger-active").removeClass("burger-inactive");
         $("#nav-container").addClass("nav-opened").removeClass("nav-closed");
         //$("#nav-container-extra").addClass("nav-opened-extra").removeClass("nav-closed-extra");
+        myStopFunction();
     }
     
     function playMessages() {
@@ -191,32 +212,37 @@ $(document).ready(function() {
     
     $(".nav-element").hover(function(){
         $(this).css("transform", "translateX(16px)");
-        $(this.children[0]).css("left", "0px");
+        //$(this.children[0]).css("left", "0px");
         $(this.children[0]).css("width", "100%");
     }, function(){
         $(this.children[0]).css("left", "initial");
-        $(this.children[0]).css("right", "0px");
+        //$(this.children[0]).css("right", "0px");
         $(this.children[0]).css("width", "0%");
         $(this).css("transform", "translateX(0)");
     });
     
     
     $(".social").hover(function(){
-        $(this.children[0]).css("left", "8px");
-        $(this.children[0]).css("width", "63%");
+        $(this.children[0]).css("opacity", "1");
     }, function(){
-        $(this.children[0]).css("left", "initial");
-        $(this.children[0]).css("right", "8px");
-        $(this.children[0]).css("width", "0%");
+        $(this.children[0]).css("opacity", "0");
     });
     
     
     
     $(".nav-element").click(function(){
+        var thisID = $(this).attr("id");
+        console.log(thisID);
+        if ($(this).attr("id") != "resume") {
         $(".selected").addClass("unselected").removeClass("selected");
         var pageId = "#" + $(this).attr("id") + "-page";
         $(pageId).removeClass("unselected").addClass("selected");
         closeNav();
+        }
+    })
+    
+    $(".card").click(function(){
+        alert("Coming soon!");
     })
     
     
