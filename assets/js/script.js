@@ -241,9 +241,6 @@ $(document).ready(function() {
         }
     })
     
-    $(".card").click(function(){
-        alert("Coming soon!");
-    })
     
     
 });
