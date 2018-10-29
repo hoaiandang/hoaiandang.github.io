@@ -245,6 +245,10 @@ body {
     position: relative;
 }
 
+.coming-soon {
+    
+}
+
 .card {
     border-radius: 10px;
     position: absolute;
@@ -289,8 +293,11 @@ body {
 }
 
 .card-text {
-    padding: 16px;
+    padding: 24px;
+    padding-left: 32px;
     font-size: 32px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
 }
 
 #card-image1 {
@@ -307,6 +314,7 @@ body {
 
 #card-image4 {
     background-image: url(../img/project-4.jpg);
+    background-position: center;
 }
 
 #burger {
@@ -699,17 +707,6 @@ circle {
     transition-timing-function: ease-out;
 }
 
-
-.nav-opened + #nav-background > circle {
-    r: 100vw;
-}
-
-.nav-closed + #nav-background > circle {
-}
-
-
-.nav-closed > #nav-bar {
-}
 
 #nav-container-extra { 
     position: fixed;

@@ -221,6 +221,17 @@ $(document).ready(function() {
         $(this).css("transform", "translateX(0)");
     });
     
+    $(".card").hover(function(){
+        $(this.children[1]).css("transform", "translateX(16px)");
+        //$(this.children[0]).css("left", "0px");
+        $(this.children[1].children[0]).css("width", "50%");
+    }, function(){
+        $(this.children[1].children[0]).css("left", "initial");
+        //$(this.children[0]).css("right", "0px");
+        $(this.children[1].children[0]).css("width", "0%");
+        $(this.children[1]).css("transform", "translateX(0)");
+    });
+    
     
     $(".social").hover(function(){
         $(this.children[0]).css("opacity", "1");
@@ -239,6 +250,10 @@ $(document).ready(function() {
         $(pageId).removeClass("unselected").addClass("selected");
         closeNav();
         }
+    })
+    
+    $(".coming-soon").click(function(){
+        alert("Coming soon");
     })
     
     
