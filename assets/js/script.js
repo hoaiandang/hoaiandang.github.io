@@ -253,9 +253,7 @@ $(document).ready(function() {
     })
     
     $(".coming-soon").click(function(){
-        alert("Coming soon");
+        alert("Coming soon!");
     })
-    
-    
     
 });
