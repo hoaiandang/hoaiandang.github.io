@@ -224,7 +224,7 @@ $(document).ready(function() {
     $(".card").hover(function(){
         $(this.children[1]).css("transform", "translateX(16px)");
         //$(this.children[0]).css("left", "0px");
-        $(this.children[1].children[0]).css("width", "50%");
+        $(this.children[1].children[0]).css("width", "65%");
     }, function(){
         $(this.children[1].children[0]).css("left", "initial");
         //$(this.children[0]).css("right", "0px");
