@@ -274,10 +274,7 @@ body {
     box-shadow: 0px 1px 4px #D3D3D3;
     top: -16px;
     bottom: 16px;
-}
-
-.card:active .card-image {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .card-image {
@@ -292,8 +289,7 @@ body {
 }
 
 .card-text {
-    padding: 24px;
-    padding-left: 32px;
+    padding: 32px;
     font-size: 28px;
     transition-duration: 0.5s;
     transition-timing-function: ease;
@@ -845,6 +841,16 @@ circle {
     border-radius: 3px;
     transition-duration: 0.5s;
     transition-timing-function: ease;
+}
+
+.card-background {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to left, #FFD800, #EB00FF);
+    position: absolute;
+    bottom: 84px;
+    opacity: 0;
+    z-index: -1;
 }
 
 .black-page-content {

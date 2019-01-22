@@ -206,13 +206,16 @@ $(document).ready(function() {
     });
     
     $(".card").hover(function(){
-        $(this.children[1]).css("transform", "translateX(16px)");
+        $(this.children[1]).css("transform", "translateX(0)");
         //$(this.children[0]).css("left", "0px");
-        $(this.children[1].children[0]).css("width", "65%");
+        $(this.children[1].children[0]).css("width", "100%");
+        $(this.children[1].children[0]).css("left", "0px");
+        $(this.children[1].children[0]).css("opacity", "0.5");
     }, function(){
-        $(this.children[1].children[0]).css("left", "initial");
+        $(this.children[1].children[0]).css("left", "0px");
         //$(this.children[0]).css("right", "0px");
-        $(this.children[1].children[0]).css("width", "0%");
+        $(this.children[1].children[0]).css("width", "100%");
+        $(this.children[1].children[0]).css("opacity", "0");
         $(this.children[1]).css("transform", "translateX(0)");
     });
     
