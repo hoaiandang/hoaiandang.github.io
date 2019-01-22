@@ -37,10 +37,7 @@ $(document).ready(function() {
         }
     }
     
-    var myVar;
-    
-    
-    
+    var myVar;  
     function hideNavBar() {
         $("#nav-bar").hide();
     }
@@ -52,26 +49,13 @@ $(document).ready(function() {
     function closeNav() {
         $("#burger").addClass("burger-inactive").removeClass("burger-active");
         $("#nav-container").addClass("nav-closed").removeClass("nav-opened");
-        //$("#nav-bar").hide();
-        
-        /*
-        $("#nav-bar").animate({
-            opacity: 0.9999999
-        }, 600, "linear", function() {
-            $(this).hide();
-        })
-        */
-        
         myVar = setTimeout(hideNavBar, 600);
-        
-        //$("#nav-container-extra").addClass("nav-closed-extra").removeClass("nav-opened-extra");
     }
     
     function openNav() {
         $("#nav-bar").show();
         $("#burger").addClass("burger-active").removeClass("burger-inactive");
         $("#nav-container").addClass("nav-opened").removeClass("nav-closed");
-        //$("#nav-container-extra").addClass("nav-opened-extra").removeClass("nav-closed-extra");
         myStopFunction();
     }
     
