@@ -61,7 +61,7 @@ $(document).ready(function() {
         $("#nav-bar").show();
         $("#burger").addClass("burger-active").removeClass("burger-inactive");
         $("#nav-container").addClass("nav-opened").removeClass("nav-closed");
-        myVar = setTimeout(openBar,250)
+        myVar = setTimeout(openBar,250);
     }
 
     function openBar() {
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
     function playMessages() {
         console.log("1");
-        setTimeout(playMessage1, 1000)
+        setTimeout(playMessage1, 1000);
     }
 
     function playMessage1() {
@@ -167,18 +167,7 @@ $(document).ready(function() {
     })
 
     $(".hoaian").click(function() {
-        if ($("#black-page").hasClass("closed")) {
-            $("#black-page").removeClass("closed").addClass("opened");
-            $("#particles-js").css("opacity", "1");
-        } else {
-            $("#black-page").removeClass("opened").addClass("closed");
-            $("#particles-js").css("opacity", "0");
-        }
-        if ($(this).attr("message") == "true") {
-            playMessages();
-            $(this).attr("message", "false");
-            console.log("if statement");
-        }
+        setTimeout(openNav, 0);
     })
 
     $(".nav-element-extra").hover(function(){

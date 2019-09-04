@@ -49,6 +49,7 @@ body {
 .title {
     position: relative;
     font-size: 64px;
+    margin-bottom: 10px;
 }
 
 .content-container {
@@ -64,7 +65,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 400px;
 }
 
 
@@ -95,6 +95,8 @@ body {
     height: 400px;
     width: 400px;
     background-position: center;
+    border-radius: 20px;
+    margin-right: 40px;
 }
 
 .hoaian-container {
