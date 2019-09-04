@@ -41,15 +41,18 @@ $(document).ready(function() {
     }
 
     var myVar;
+    var myVar2;
     function hideNavBar() {
         $("#nav-bar").hide();
     }
 
     function myStopFunction() {
         clearTimeout(myVar);
+        clearTimeout(myVar2);
     }
 
     function closeNav() {
+        $("#nav-container").css("box-shadow", "");
         $("#burger").addClass("burger-inactive").removeClass("burger-active");
         $("#nav-container").addClass("nav-closed").removeClass("nav-opened");
         $("#nav-bar").addClass("nav-bar-closed").removeClass("nav-bar-opened");
@@ -62,69 +65,17 @@ $(document).ready(function() {
         $("#burger").addClass("burger-active").removeClass("burger-inactive");
         $("#nav-container").addClass("nav-opened").removeClass("nav-closed");
         myVar = setTimeout(openBar,250);
+        myVar2 = setTimeout(openShadow,750);
     }
 
     function openBar() {
       $("#nav-bar").addClass("nav-bar-opened").removeClass("nav-bar-closed");
     }
 
-    function playMessages() {
-        console.log("1");
-        setTimeout(playMessage1, 1000);
+    function openShadow() {
+      $("#nav-container").css("box-shadow", "inset 1px -1px 4px rgba(0, 0, 0, 0.2)");
     }
 
-    function playMessage1() {
-        console.log("2");
-        $("#message-1").css("opacity", ".8");
-        setTimeout(fadeMessage1, 3200);
-    }
-
-    function fadeMessage1() {
-        console.log("3");
-        $("#message-1").css("opacity", "0");
-        setTimeout(playMessage2, 1600);
-    }
-
-    function playMessage2() {
-        console.log("4");
-        $("#message-2").css("opacity", "0.8");
-        setTimeout(fadeMessage2, 4800);
-    }
-
-    function fadeMessage2() {
-        console.log("5");
-        $("#message-2").css("opacity", "0");
-        setTimeout(playMessage3, 1600);
-    }
-
-    function playMessage3() {
-        console.log("6");
-        $("#message-3").css("opacity", "0.8");
-        setTimeout(fadeMessage3, 4800);
-    }
-
-    function fadeMessage3() {
-        console.log("7");
-        $("#message-3").css("opacity", "0");
-        setTimeout(playMessage4, 1600);
-    }
-
-    function playMessage4() {
-        console.log("8");
-        $("#message-4").css("opacity", "0.8");
-        setTimeout(fadeMessage4, 4200);
-    }
-
-    function fadeMessage4() {
-        console.log("9");
-        $("#message-4").css("opacity", "0");
-    }
-
-
-
-
-    console.log($(".message").attr("message") + $(".message").attr("message"));
-    console.log($(".message").html());
     $("#nav-bar").hide();
     $("#top").hide();
     setTimeout(circleShow, 800);

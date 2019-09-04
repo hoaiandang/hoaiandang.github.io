@@ -75,20 +75,6 @@ body {
     height: auto;
 }
 
-#profile {
-    height: 100vh;
-    width: 400px;
-    right: 10vw;
-    position: fixed;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    /*
-    background-color: white;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    */
-}
-
 .profile-elem {
     background-image: url(../img/circle%20profile.png);
     background-size: cover;
@@ -97,6 +83,7 @@ body {
     background-position: center;
     border-radius: 20px;
     margin-right: 40px;
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hoaian-container {
@@ -429,10 +416,12 @@ body {
 
     /*animation: unpress 1.2s;*/
 
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .burger-inactive:active + #nav-container {
+    transition-duration: 0s;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .burger-active + #nav-container {
@@ -627,7 +616,7 @@ body {
     position: fixed;
     z-index: 8;
     background-color: white;
-    transition-duration: 0.8s;
+    transition: box-shadow 0s, width 0.8s, height 0.8s, top 0.8s, right 0.8s;
     transition-timing-function: ease-out;
     overflow: hidden;
     transform: translate3d(0);
@@ -682,36 +671,9 @@ body {
     /*clip-path: circle(60px at 95vw 15vh);*/
 }
 
-#nav-background {
-    position: fixed;
-    z-index: 7;
-    transition-duration: 0.8s;
-    transition-timing-function: ease-out;
-    overflow: hidden;
-    top: 0px;
-    right: 0px;
-    height: 100vh;
-    width: 100vw;
-    transform: scale(1);
-    filter: drop-shadow( 0px 3px 6px rgba(0, 0, 0, 0.1) );
-}
-
-.nav-opened + #nav-background {
-}
-
-.nav-closed + #nav-background {
-    pointer-events: none;
-}
-
 circle {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
-
-#nav-background > circle {
-    transition-duration: 0.8s;
-    transition-timing-function: ease-out;
-}
-
 
 #nav-container-extra {
     position: fixed;
