@@ -42,6 +42,7 @@ $(document).ready(function() {
 
     var myVar;
     var myVar2;
+    var myVar3;
     function hideNavBar() {
         $("#nav-bar").hide();
     }
@@ -51,12 +52,16 @@ $(document).ready(function() {
         clearTimeout(myVar2);
     }
 
+    function myStopFunction2() {
+        clearTimeout(myVar3);
+    }
+
     function closeNav() {
         $("#nav-container").css("box-shadow", "");
         $("#burger").addClass("burger-inactive").removeClass("burger-active");
         $("#nav-container").addClass("nav-closed").removeClass("nav-opened");
         $("#nav-bar").addClass("nav-bar-closed").removeClass("nav-bar-opened");
-        //myVar = setTimeout(hideNavBar, 600);
+        myVar3 = setTimeout(hideNavBar, 600);
         myStopFunction();
     }
 
@@ -66,6 +71,7 @@ $(document).ready(function() {
         $("#nav-container").addClass("nav-opened").removeClass("nav-closed");
         myVar = setTimeout(openBar,250);
         myVar2 = setTimeout(openShadow,750);
+        myStopFunction2();
     }
 
     function openBar() {
