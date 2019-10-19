@@ -310,6 +310,11 @@ body {
     background-image: url(../img/project-6.jpg);
 }
 
+#card-image7 {
+    background-image: url(../img/project-7.jpg);
+    background-position: center;
+}
+
 #burger {
     -webkit-backface-visibility: hidden;
     position: fixed;
